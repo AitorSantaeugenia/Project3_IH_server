@@ -13,6 +13,10 @@ const bookingSchema = new Schema({
 		type: Date,
 		required: [ true, 'Checkout date is required' ]
 	},
+	status: { type: String, required: true, default: 'booked' },
+	transactionid: { type: String, required: true },
+	roomid: { type: String, required: true },
+	userid: { type: String, required: true },
 	amount: {
 		type: Number,
 		required: [ true, 'Total amount is required' ]

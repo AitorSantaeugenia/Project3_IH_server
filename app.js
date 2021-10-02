@@ -1,12 +1,12 @@
 require("dotenv/config");
-require("./db");
+require("./db/index.js");
 const express = require("express");
 
 const { isAuthenticated } = require("./middleware/jwt.middleware"); // <== IMPORT
 
 
 const app = express();
-require("./config")(app);
+require("./config/index.js")(app);
 
 
 // 👇 MIDDLEWARE MISSING
@@ -20,14 +20,14 @@ const projectRouter = require("./routes/project.routes");
 app.use("/api", isAuthenticated, projectRouter);            // <== UPDATE
 
 const taskRouter = require("./routes/task.routes");
-app.use("/api",isAuthenticated, taskRouter);            // <== UPDATE
+app.use("/api", isAuthenticated, taskRouter);            // <== UPDATE
 
 
-app.use((req, res, next) => {
-    // If no routes match, send them the React HTML.
-    res.sendFile(__dirname + "/public/index.html");
-  });
+// app.use((req, res, next) => {
+//   // If no routes match, send them the React HTML.
+//   res.sendFile(__dirname + "/public/index.html");
+// });
 
-// require("./error-handling")(app);
+require("./error-handling")(app);
 
 module.exports = app;

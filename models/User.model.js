@@ -5,11 +5,11 @@ const userSchema = new Schema({
 	email: { type: String, unique: true, required: true },
 	password: { type: String, required: true },
 	name: { type: String, required: true },
-	surname: String,
 	image: String,
-	dateCreated: {
-		type: Date,
-		default: Date.now
+	rol: {
+		type: String,
+		enum: [ 'administrator', 'guest' ],
+		default: 'guest'
 	}
 });
 

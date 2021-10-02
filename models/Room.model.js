@@ -9,9 +9,17 @@ const roomSchema = new Schema({
 		type: String,
 		required: [ true, 'Room number is required' ]
 	},
+	name: {
+		type: String,
+		required: [ true, 'Room name is required' ]
+	},
 	type: {
 		type: String,
 		required: [ true, 'Please specify room type' ]
+	},
+	phonenumber: {
+		type: Number,
+		required: true
 	},
 	price: {
 		type: Number,
@@ -21,6 +29,8 @@ const roomSchema = new Schema({
 		type: Number,
 		required: [ true, 'Please specify maximum number of guests allowed' ]
 	},
+	imageurls: [],
+	currentbookings: [],
 	dateCreated: {
 		type: Date,
 		default: Date.now
