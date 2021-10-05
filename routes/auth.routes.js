@@ -101,7 +101,7 @@ router.post('/login', (req, res, next) => {
 				const authToken = jwt.sign(payload, process.env.TOKEN_SECRET, { algorithm: 'HS256', expiresIn: '6h' });
 
 				// Send the token as the response
-				res.status(200).json({ authToken: authToken, message: 'Bienvenido.' });
+				res.status(200).json({ authToken: authToken, user: foundUser, message: 'Bienvenido.' });
 			} else {
 				res.status(401).json({ message: 'No es posible autenticar el usuario.' });
 			}
