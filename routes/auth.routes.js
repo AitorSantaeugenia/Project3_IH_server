@@ -74,7 +74,7 @@ router.post('/login', (req, res, next) => {
 
 	// Check if email or password are provided as empty string
 	if (email === '' || password === '') {
-		res.status(400).json({ message: 'Email y password necesarios.' });
+		res.status(400).json({ message: 'Email o password incorrectos.' });
 		return;
 	}
 

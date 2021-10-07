@@ -2,35 +2,27 @@ const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
 const roomSchema = new Schema({
-	hotel: {
+	nombre: {
 		type: String
 	},
-	number: {
-		type: String,
-		required: [ true, 'Room number is required' ]
+	tipo: {
+		type: String
 	},
-	name: {
-		type: String,
-		required: [ true, 'Room name is required' ]
+	info: {
+		type: String
 	},
-	type: {
-		type: String,
-		required: [ true, 'Please specify room type' ]
+	maxguests: {
+		type: Number
 	},
-	phonenumber: {
-		type: Number,
-		required: true
+	precio: {
+		type: Number
 	},
-	price: {
-		type: Number,
-		required: [ true, 'Please specify price per night' ]
+	cantidad: {
+		type: Number
 	},
-	maxGuests: {
-		type: Number,
-		required: [ true, 'Please specify maximum number of guests allowed' ]
+	imagen: {
+		type: String
 	},
-	imageurls: [],
-	currentbookings: [],
 	dateCreated: {
 		type: Date,
 		default: Date.now

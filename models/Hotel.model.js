@@ -2,24 +2,38 @@ const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
 const hotelSchema = new Schema({
-	name: {
+	nombre: {
 		type: String,
 		required: [ true, 'Hotel name is required' ]
 	},
 	stars: {
 		type: Number
 	},
-	manager: String,
-	description: String,
-	numberRooms: Number,
+	info: String,
+	catchPhrase: String,
+	catchTwo: String,
+	direct: String,
+	codigoP: Number,
+	telf: String,
+	email: String,
+	latitud: String,
+	altitud: String,
+	logo: {
+		type: String,
+		default: 'https://i.imgur.com/Y9G4UWU.png'
+	},
+	image: {
+		type: String,
+		default: 'https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg'
+	},
+	otherImage: {
+		type: String,
+		default: 'https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg'
+	},
 	dateCreated: {
 		type: Date,
 		default: Date.now
-	},
-	address: String,
-	rooms: [ { type: Schema.Types.ObjectId, ref: 'Room' } ]
-	//tasks: [ { type: Schema.Types.ObjectId, ref: 'Task' } ]
-	// owner will be added later on
+	}
 });
 
 module.exports = model('Hotel', hotelSchema);

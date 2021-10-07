@@ -1,11 +1,30 @@
 const express = require('express');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('../models/User.model');
-
-const { isAuthenticated } = require('../middleware/jwt.middleware.js');
+//require hotel model
+const Tienda = require('../models/Tienda.model');
 
 const router = express.Router();
-const saltRounds = 10;
+
+//  POST /paginas/tienda - Create a shop
+router.post('/paginas/tienda', (req, res, next) => {
+	const { nombre, info, imagen } = req.body;
+
+	Tienda.create({
+		nombre,
+		info,
+		imagen
+	})
+		.then((response) => res.json(response))
+		.catch((err) => res.json(err));
+});
+
+//  GET /paginas/tienda -  Retrieves all of the shops
+router.get('/paginas/tienda', (req, res, next) => {
+	Tienda.find()
+		.then((tienda) => {
+			res.json(tienda);
+			//console.log(tienda);
+		})
+		.catch((err) => res.json(err));
+});
 
 module.exports = router;
