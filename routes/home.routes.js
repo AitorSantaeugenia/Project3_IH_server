@@ -1,11 +1,16 @@
-const express = require('express');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('../models/User.model');
+// const express = require('express');
+// //require hotel model
+// const Hotel = require('../models/Hotel.model');
+// const router = express.Router();
 
-const { isAuthenticated } = require('./../middleware/jwt.middleware.js');
+// //  GET / -  Retrieves all from the Hotel
+// router.get('/', (req, res, next) => {
+// 	Hotel.find()
+// 		.then((hotel) => {
+// 			res.json(hotel);
+// 			console.log(hotel);
+// 		})
+// 		.catch((err) => res.json(err));
+// });
 
-const router = express.Router();
-const saltRounds = 10;
-
-module.exports = router;
+// module.exports = router;

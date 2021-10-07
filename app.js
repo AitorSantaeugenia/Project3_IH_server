@@ -35,6 +35,25 @@ app.use('/api', isAuthenticated, crearRestaurante); // <== UPDATE
 const crearRoom = require('./routes/rooms.routes');
 app.use('/api', isAuthenticated, crearRoom); // <== UPDATE
 
+const userProfile = require('./routes/userprofile.routes');
+app.use('/api', isAuthenticated, userProfile); // <== UPDATE
+
+//This one is giving me troubles
+// const homeRoutes = require('./routes/home.routes');
+// app.use('/api', isAuthenticated, homeRoutes); // <== UPDATE
+
+const roomsPage = require('./routes/roomspage.routes');
+app.use('/api', isAuthenticated, roomsPage); // <== UPDATE
+
+const restaurantePage = require('./routes/restaurantepage.routes');
+app.use('/api', isAuthenticated, restaurantePage); // <== UPDATE
+
+const tiendaPage = require('./routes/tiendapage.routes');
+app.use('/api', isAuthenticated, tiendaPage); // <== UPDATE
+
+const contactoPage = require('./routes/contactopage.routes');
+app.use('/api', isAuthenticated, contactoPage); // <== UPDATE
+
 // app.use((req, res, next) => {
 //   // If no routes match, send them the React HTML.
 //   res.sendFile(__dirname + "/public/index.html");

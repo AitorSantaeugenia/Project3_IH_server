@@ -26,4 +26,14 @@ router.get('/paginas/restaurante', (req, res, next) => {
 		.catch((err) => res.json(err));
 });
 
+// POST / dashboard / usuarios - DELETE;
+router.delete('/paginas/restaurante/:id', (req, res, next) => {
+	const { id } = req.params;
+	console.log(id);
+
+	Restaurante.findByIdAndRemove(id)
+		.then(() => res.json({ message: `Restaurante removed successfully.` }))
+		.catch((error) => res.json(error));
+});
+
 module.exports = router;
