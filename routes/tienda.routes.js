@@ -27,4 +27,14 @@ router.get('/paginas/tienda', (req, res, next) => {
 		.catch((err) => res.json(err));
 });
 
+// DELETE / /paginas/restaurante/:id / tienda - DELETE;
+router.delete('/paginas/tienda/:id', (req, res, next) => {
+	const { id } = req.params;
+	//console.log(id);
+
+	Tienda.findByIdAndRemove(id)
+		.then(() => res.json({ message: `Tienda removed successfully.` }))
+		.catch((error) => res.json(error));
+});
+
 module.exports = router;
