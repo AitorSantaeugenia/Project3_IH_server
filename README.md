@@ -1,10 +1,19 @@
-### API Documentation
+# HOTEL TEMPLATER SERVER
 
-We will start our project by first documenting all of the routes and data models for our API. Following best practices we will use _verbs_ to specify the type of operation being done and _nouns_ when naming endpoints.
+This project is integrated with this client [CLIENT HOTEL TEMPLATER](https://github.com/AitorSantaeugenia/Project3_IH_client).
 
-#### Routes
+## TODO
 
-##### Project routes
+- Booking for rooms
+- Booking for services (restaurant tickets)
+- Dashboard to another client
+- Admin and guest users
+- Show/hide components and pages
+- Download client from a package / rar / or something to integrate with backend
+- Refractor all code
+- Organize code
+
+#### ROUTES API WIP
 
 | HTTP verb | URL                        | Request body | Action                        |
 | --------- | -------------------------- | ------------ | ----------------------------- |
@@ -14,58 +23,4 @@ We will start our project by first documenting all of the routes and data models
 | PUT       | `/api/projects/:projectId` | JSON         | Edits the specified project   |
 | DELETE    | `/api/projects/:projectId` | (empty)      | Deletes the specified project |
 
-##### Task routes
-
-| HTTP verb | URL                  | Request body | Action                     |
-| --------- | -------------------- | ------------ | -------------------------- |
-| POST      | `/api/tasks`         | JSON         | Adds a new task            |
-| GET       | `/api/tasks/:taskId` | (empty)      | Returns the specified task |
-| PUT       | `/api/tasks/:taskId` | JSON         | Edits the specified task   |
-| DELETE    | `/api/tasks/:taskId` | (empty)      | Deletes the specified task |
-
-
-
-##### Auth routes
-
-| HTTP verb | URL            | Request Headers                 | Request Body              |
-| --------- | -------------- | ------------------------------- | ------------------------- |
-| POST      | `/auth/signup` | --                              | { email, password, name } |
-| POST      | `/auth/login`  | --                              | { email, password }       |
-| GET       | `/auth/verify` | Authorization: Bearer \< JWT \> | --                        |
-
-
-
-<hr>
-
-#### Models
-
-##### Project Model
-
-```js
-{
-  title: String,
-  description: String,
-  tasks: [ { type: Schema.Types.ObjectId, ref: 'Task' } ]
-}
-```
-
-##### Task Model
-
-```js
-{
-  title: String,
-  description: String,
-  project: { type: Schema.Types.ObjectId, ref: 'Project' }
-}
-```
-
-##### User Model
-
-```js
-{
-  email: { type: String, unique: true, required: true },
-  password: { type: String, required: true },
-  name: { type: String, required: true },
-}
-```
-
+#### MODELS API WIP

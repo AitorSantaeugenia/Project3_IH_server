@@ -31,4 +31,14 @@ router.get('/paginas/habitaciones', (req, res, next) => {
 		.catch((err) => res.json(err));
 });
 
+// POST /paginas/restaurante/:id / restaurante - DELETE;
+router.delete('/paginas/habitaciones/:id', (req, res, next) => {
+	const { id } = req.params;
+	//console.log(id);
+
+	Rooms.findByIdAndRemove(id)
+		.then(() => res.json({ message: `Room removed successfully.` }))
+		.catch((error) => res.json(error));
+});
+
 module.exports = router;
