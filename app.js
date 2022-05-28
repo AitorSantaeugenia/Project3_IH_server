@@ -14,12 +14,6 @@ app.use('/api', allRoutes);
 const authRouter = require('./routes/auth.routes');
 app.use('/api/auth', authRouter);
 
-const projectRouter = require('./routes/project.routes');
-app.use('/api', isAuthenticated, projectRouter); // <== UPDATE
-
-const taskRouter = require('./routes/task.routes');
-app.use('/api', isAuthenticated, taskRouter); // <== UPDATE
-
 const usuarios = require('./routes/users.routes');
 app.use('/api', isAuthenticated, usuarios); // <== Mostrar usuarios
 
